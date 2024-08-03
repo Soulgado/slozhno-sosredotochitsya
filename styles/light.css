@@ -30,7 +30,7 @@
   
   }
   
-  .theme_light .header__rec-decoration {
+  .theme_light .rec-decoration {
     display: none;
   }
 }
@@ -45,6 +45,6 @@
 
 }
 
-.theme_light .header__rec-decoration {
+.theme_light .rec-decoration {
   display: none;
 }
