@@ -8,12 +8,15 @@
   background-attachment: fixed;
   font-family: 'IBM Plex Mono', sans-serif;
   margin: 0px 10px;
+  position: relative;
 }
 
 .header {
   display: grid;
   position: relative;
-  grid-template-rows: repeat(4, auto);
+  block-size: 100vh;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: center;
   margin-block-start: 10px;
 }
 
@@ -42,9 +45,9 @@ header::before{
 .header__rec-decoration {
   color: var(--accent-color);
   justify-self: end;
-  position: relative;
-  margin-block-start: 3px;
-  margin-inline-end: 30px;
+  position: absolute;
+  right: 28px;
+  top: 3px;
 }
 
 .header__rec-decoration::after {
@@ -62,13 +65,11 @@ header::before{
 .header__theme-menu {
   align-self: center;
   justify-self: end;
-  margin-block-start: 39px;
-  margin-block-end: 65px;
 }
 
 @media (min-width: 1024px) {
   .header__theme-menu {
-    align-self: center;
+    align-self: start;
     justify-self: center;
   }
 
@@ -80,6 +81,7 @@ header::before{
 
 .header__theme-menu-list {
   list-style: none;
+  margin: 0;
 }
 
 .header__theme-menu-item {
@@ -105,23 +107,27 @@ header::before{
 
 .header__title {
   margin: 0;
-  margin-block-end: 55px;
   font-size: 116px;
   line-height: 95.7px;
   font-weight: 700;
   text-align: left;
   text-shadow: 4px 4px 0 var(--accent-color);
-  color: #DB00FF;
+  color: var(--title-color);
 }
 
-@media (max-width: 375px ) {
+@media (max-width: 375px) {
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }
 
+@media (max-width: 768px) {
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
 .header__text {
-  margin-block-end: 66px;
   font-size: 18px;
   font-weight: 700;
 }
@@ -176,7 +182,7 @@ header::before{
   font-weight: 400;
   line-height: 23.4px;
   text-align: left;
-  color: #F1B2CE;
+  color: var(--secondary-color);
 }
 
 @media (min-width: 1024px) {
@@ -227,7 +233,7 @@ header::before{
 }
 
 .section__link {
-  border-bottom: 1px solid #F1B2CE;
+  border-bottom: 1px solid var(--secondary-color);
   text-shadow: 2px 1px var(--accent-color);
 }
 
@@ -267,7 +273,7 @@ header::before{
   font-weight: 700;
   line-height: 95.7px;
   text-align: left;
-  color: #DB00FF;
+  color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   align-self: center;
   justify-self: center;
