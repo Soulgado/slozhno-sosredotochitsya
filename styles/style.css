@@ -24,8 +24,7 @@
 
 @media (min-width: 768px) {
   .header {
-    margin-block-end: 60px;
-    margin-inline-end: 20px;
+    margin: 0 20px 60px 20px;
   }
 }
 
@@ -163,6 +162,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .header__text {
+    width: 50%;
+  }
+}
+
 .title-decor {
   background-color: var(--accent-color);
   color: var(--main-text-color);
@@ -177,7 +182,7 @@
 
 @media (min-width: 768px) {
   .main {
-    gap: 50px;
+    gap: 60px;
     margin-inline-start: 20px;
     margin-inline-end: 20px;
   }
@@ -259,6 +264,10 @@
 }
 
 @media (min-width: 768px) {
+  .image-content-title {
+    margin-block-end: 20px;
+  }
+
   .section__images-container {
     display: grid;
     grid-template-areas: 
