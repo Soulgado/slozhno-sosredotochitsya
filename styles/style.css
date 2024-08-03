@@ -203,11 +203,29 @@
   font-weight: 400;
 }
 
+.third-section__content-title {
+  margin-block-end: 20px;
+}
+
 @media (min-width: 768px) {
   .first-section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
+  }
+
+  .second-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+
+  .second-section__title {
+    grid-column: 1;
+  }
+
+  .second-section-content {
+    grid-column: span 3;
   }
 
   .third-section {
