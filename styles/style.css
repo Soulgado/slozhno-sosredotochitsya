@@ -252,6 +252,12 @@
   }
 }
 
+.section__image {
+  width: 100%;
+  height: 100%;
+  margin-block-end: 10px;
+}
+
 @media (min-width: 768px) {
   .section__images-container {
     display: grid;
@@ -261,6 +267,10 @@
       'tape street street'
       ;
     gap: 20px;
+  }
+
+  .section__image {
+    margin: 0;
   }
 
   .sunset-image {
@@ -284,11 +294,6 @@
   .street-image {
     grid-area: street;
   }
-}
-
-.section__image {
-  width: 100%;
-  height: 100%;
 }
 
 .section__link {
