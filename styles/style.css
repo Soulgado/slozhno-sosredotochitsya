@@ -19,7 +19,7 @@ body {
 .header {
   display: grid;
   position: relative;
-  block-size: 100vh;
+  block-size: 96vh;
   grid-template-rows: 1fr auto 1fr;
   align-items: center;
   margin: 10px 10px 50px 10px;
