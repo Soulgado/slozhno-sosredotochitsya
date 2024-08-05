@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-image: url("../images/cover-image-dark.png");
+  background-image: var(--background-image);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -13,11 +13,6 @@
   position: relative;
 }
 
-.page.theme_light {
-  background-image: url("../images/cover-image-light.png");
-  background-color: #FFF1F7;
-}
-
 .header {
   display: grid;
   position: relative;
@@ -25,7 +20,7 @@
   min-block-size: 668px;
   grid-template-rows: 1fr auto 1fr;
   align-items: center;
-  margin: 0 10px 40px 10px;
+  margin: 0 7px 40px 10px;
 }
 
 @media (min-width: 768px) {
@@ -39,15 +34,10 @@
   width: 25px;
   height: 25px;
   position: absolute;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decoration-color);
+  border-right: 1px solid var(--decoration-color);
   right: 0;
   top: 10px;
-}
-
-.theme_light .decorated-zone::after {
-  border-top: 1px solid var(--main-text-color);
-  border-right: 1px solid var(--main-text-color);
 }
 
 @media (min-width: 768px) {
@@ -61,15 +51,10 @@
   width: 25px;
   height: 25px;
   position: absolute;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
-  left: 10px;
+  border-bottom: 1px solid var(--decoration-color);
+  border-left: 1px solid var(--decoration-color);
+  left: 0;
   bottom: 10px;
-}
-
-.theme_light .decorated-zone::before {
-  border-bottom: 1px solid var(--main-text-color);
-  border-left: 1px solid var(--main-text-color);
 }
 
 @media (min-width: 768px) {
@@ -80,16 +65,13 @@
 }
 
 .rec-decoration {
+  display: var(--decoration-display);
   color: var(--accent-color);
   justify-self: end;
   position: absolute;
   right: 38px;
   top: 13px;
   text-transform: uppercase;
-}
-
-.theme_light .rec-decoration {
-  display: none;
 }
 
 @media (min-width: 768px) {
@@ -114,13 +96,21 @@
 .header__theme-menu {
   align-self: center;
   justify-self: end;
+  margin-block-start: 8px;
+}
+
+@media (min-width: 768px) {
+  .header__theme-menu {
+    margin-block-start: 16px;
+  } 
 }
 
 @media (min-width: 1024px) {
   .header__theme-menu {
     align-self: start;
     justify-self: center;
-    margin-top: 20px;
+    margin-block-start: 19px;
+    margin-inline-start: 18px;
   }
 
   .header__theme-menu-list {
@@ -141,45 +131,26 @@
   padding: 1.5px 13px;
   background: none;
   border: none;
-  color: var(--accent-color);
+  color: var(--decoration-color);
   font-family: 'IBM Plex Mono', monospace;
   font-size: 18px;
   font-weight: 400;
-  line-height: 18px;
   text-align: center;
   text-transform: lowercase;
 }
 
-.theme_light .header__theme-menu-button {
-  color: var(--main-text-color);
-}
-
 .header__theme-menu-button:hover {
   cursor: pointer;
-  border: 1px solid rgba(255, 0, 112, 0.4);
-}
-
-.theme_light .header__theme-menu-button:hover {
-  border: 1px solid rgba(50, 49, 45, 0.4);
+  border: 1px solid var(--opaque-decoration-color);
 }
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: 1px solid var(--accent-color);
-}
-
-.theme_light .header__theme-menu-button:focus-visible {
-  outline: none;
-  border-bottom: 1px solid var(--main-text-color);
+  border-bottom: 1px solid var(--decoration-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
-  pointer-events: none;
-}
-
-.theme_light .header__theme-menu-button_active {
-  border: 1px solid var(--main-text-color);
+  border: 1px solid var(--decoration-color);
   pointer-events: none;
 }
 
@@ -201,20 +172,21 @@
 
 .header__text {
   margin: 0;
+  margin-block-end: 13px;
   font-size: 18px;
   font-weight: 700;
 }
 
 @media (min-width: 768px) {
   .header__text {
-    width: 48%;
+    width: 49%;
     justify-self: end;
   }
 }
 
 @media (min-width: 1024px) {
   .header__text {
-    width: 50%;
+    margin-block-end: 0;
   }
 }
 
@@ -225,35 +197,25 @@
 
 .main {
   display: grid;
-  gap: 30px;
+  gap: 50px;
   margin-inline-start: 10px;
   margin-inline-end: 10px;
 }
 
 @media (min-width: 768px) {
   .main {
-    gap: 60px;
+    gap: 80px;
     margin-inline-start: 20px;
     margin-inline-end: 20px;
   }
 }
 
 .section__title {
-  margin-block-end: 20px;
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
   text-align: left;
-  color: var(--accent-color);
-}
-
-.theme_light .section__title {
-  color: #353430;
-}
-
-.section__content {
-  display: grid;
-  gap: 20px;
+  color: var(--decoration-color);
 }
 
 .section__content-title {
@@ -267,29 +229,48 @@
   font-weight: 400;
 }
 
+.section {
+  display: grid;
+  gap: 20px;
+}
+
 @media (min-width: 768px) {
-  .double-column-section {
-    display: grid;
+  .section {
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
   }
 
-  .triple-column-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 20px;
+  .section > article {
+    grid-column: 2/3;
   }
 
-  .triple-column-section .section__title {
-    grid-column: 1;
-  }
-
-  .triple-column-section .section__content {
+  .section__content {
     grid-column: span 3;
   }
 }
 
+@media (min-width: 1024px) {
+  .section {
+    column-gap: 12px;
+  }
+}
+
+.section__content {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .section__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.section__article-title {
+  margin-block-end: 20px;
+} 
+
 .section__text-content {
+  margin-block-end: 20px;
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
@@ -297,15 +278,12 @@
   color: var(--secondary-color);
 }
 
-@media (min-width: 1024px) {
-  .second-section-content {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 20px;
-  }
+.section__text-content:last-child {
+  margin-block-end: 0;
 }
 
 .section__image {
+  display: block;
   width: 100%;
   height: 100%;
   margin-block-end: 10px;
@@ -368,6 +346,7 @@
 
 .footer {
   height: 100vh;
+  min-block-size: 668px;
   display: grid;
   position: relative;
   margin: 30px 10px 0 10px;
@@ -375,7 +354,7 @@
 
 @media (min-width: 768px) {
   .footer {
-    margin: 60px 20px 0 20px;
+    margin: 60px 20px 0 0;
   }
 }
 

@@ -7,4 +7,9 @@
   --main-text-color: #000028;
   --title-color: #DB00FF;
   --secondary-color: #F1B2CE;
+  --decoration-display: inline-block;
+  --background-image: url("../images/cover-image-dark.png");
+  --background-color: #000028;
+  --decoration-color: #FF0070;
+  --opaque-decoration-color: rgba(255, 0, 112, 0.4);
 }

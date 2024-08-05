@@ -8,16 +8,24 @@
   --main-text-color: #353430;
   --title-color: #FFC2E6;
   --secondary-color: #353430;
-  ;
+  --decoration-display: none;
+  --background-image: url("../images/cover-image-light.png");
+  --background-color: #FFF1F7;
+  --decoration-color: #353430;
+  --opaque-decoration-color: rgba(50, 49, 45, 0.4);
 }
 
 @media (prefers-color-scheme: light) {
-  :root .theme_light {
+  :root .theme_auto {
       --accent-color: #FF8DCB;
       --main-text-color: #353430;
       --title-color: #FFC2E6;
       --secondary-color: #353430;
-      ;
+      --decoration-display: none;
+      --background-image: url("../images/cover-image-light.png");
+      --background-color: #FFF1F7;
+      --decoration-color: #353430;
+      --opaque-decoration-color: rgba(50, 49, 45, 0.4);
     }
 
   .page.theme_light {
