@@ -278,7 +278,7 @@
   color: var(--secondary-color);
 }
 
-.section__text-content:last-child {
+.section__subarticle:last-child .section__text-content:last-child {
   margin-block-end: 0;
 }
 
